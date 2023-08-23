@@ -1,4 +1,4 @@
-import PostEditor from "./PostEditor";
+import PostEditor from "./post-editor/PostEditor";
 import PostPreview from "./PostPreview";
 
 const App = () => {
