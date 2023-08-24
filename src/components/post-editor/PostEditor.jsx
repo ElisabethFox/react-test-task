@@ -1,21 +1,20 @@
 import InputForm from './InputForm';
 import PostTextForm from './PostTextForm';
-import Toggle from './Toggle';
+import HeaderToggle from './HeaderToggle';
+import usePostData from '../../hooks/usePostData';
 
 const PostEditor = () => {
+    const { postData } = usePostData();
+    const { title, postText, header } = postData;
+
     return (
         <div className="post-container post-editor">
             <h2 className="post-editor__title">Settings</h2>
 
-            <InputForm title="title" />
-            <PostTextForm text="Some post text" />
+            <InputForm title={title} />
+            <PostTextForm text={postText} />
 
-            <Toggle title="header"/>
-            <InputForm title="header" />
-
-            <Toggle title="image"/>
-
-
+            <HeaderToggle title="header"/>
         </div>
     );
 }
