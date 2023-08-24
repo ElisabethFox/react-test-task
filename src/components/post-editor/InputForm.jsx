@@ -1,16 +1,16 @@
 import Form from 'react-bootstrap/Form';
 
-const TitleForm = () => {
+const InputForm = ({ name }) => {
     return (
         <Form>
             <Form.Group className="mb-10">
                     <Form.Control
                         as="input"
                         type="text"
-                        name="title"
-                        aria-label="Title"
+                        name={name}
+                        aria-label={name}
                         className="form"
-                        placeholder="Title"
+                        placeholder={name}
                         //onChange={{}}
                     />
             </Form.Group>
@@ -18,4 +18,4 @@ const TitleForm = () => {
     );
 }
  
-export default TitleForm;
+export default InputForm;

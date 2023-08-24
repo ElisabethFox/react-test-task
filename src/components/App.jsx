@@ -1,5 +1,5 @@
 import PostEditor from "./post-editor/PostEditor";
-import PostPreview from "./PostPreview";
+import PostPreview from "./post-preview/PostPreview";
 
 const App = () => {
     return (
