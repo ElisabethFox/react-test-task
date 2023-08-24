@@ -1,4 +1,5 @@
 @import './reset.css';
+@import 'bootstrap';
 
 body {
   margin: 0;
@@ -29,13 +30,22 @@ code {
   background-color: #e4f1ff;
 }
 
+.post-preview {
+  display: flex;
+  flex-direction: column;
+
+  justify-content: center;
+}
+
 .form {
   display: inline-block;
 
   margin: 10px 0;
   padding: 5px 5px;
-  width: 100%;
 
   resize: vertical;
 }
 
+.post-content__card {
+  margin: 0 30px;
+}

@@ -1,9 +1,9 @@
-import PostContentContainer from "./PostContentContainer";
+import PostContentCard from "./PostContentCard";
 
 const PostPreview = () => {
     return (
         <div className="post-container post-preview">
-            <PostContentContainer />
+            <PostContentCard />
         </div>
     );
 }
