@@ -3,7 +3,7 @@ import Form from 'react-bootstrap/Form';
 const PostTextForm = ({ text }) => {
     const handleChange = (e) => {
         e.preventDefault();
-        localStorage.setItem('Post Text', JSON.stringify(e.target.value))
+        localStorage.setItem('postText', JSON.stringify(e.target.value))
     };
 
     return (
