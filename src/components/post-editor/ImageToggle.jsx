@@ -2,7 +2,7 @@ import { Form } from 'react-bootstrap';
 import { useState } from 'react';
 import InputForm from './InputForm';
 
-const HeaderToggle = ({ title }) => {
+const ImageToggle = ({ title }) => {
     const [isActive, setActive] = useState(false);
 
     const handleClick = () => {
@@ -38,4 +38,4 @@ const HeaderToggle = ({ title }) => {
     );
 };
  
-export default HeaderToggle;
+export default ImageToggle;

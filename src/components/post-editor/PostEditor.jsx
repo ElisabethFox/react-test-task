@@ -2,6 +2,7 @@ import InputForm from './InputForm';
 import PostTextForm from './PostTextForm';
 import HeaderToggle from './HeaderToggle';
 import usePostData from '../../hooks/usePostData';
+import ImageToggle from './ImageToggle';
 
 const PostEditor = () => {
     const { postData } = usePostData();
@@ -14,7 +15,9 @@ const PostEditor = () => {
             <InputForm title={title} />
             <PostTextForm text={postText} />
 
-            <HeaderToggle title="header"/>
+            <HeaderToggle title={header}/>
+            <ImageToggle title="image"/>
+            
         </div>
     );
 }
