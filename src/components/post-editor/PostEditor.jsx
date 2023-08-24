@@ -7,11 +7,11 @@ const PostEditor = () => {
         <div className="post-container post-editor">
             <h2 className="post-editor__title">Settings</h2>
 
-            <InputForm name="Title" />
-            <PostTextForm />
+            <InputForm title="Title" />
+            <PostTextForm text="Some post text" />
 
             <Toggle title="header"/>
-            <InputForm name="Header" />
+            <InputForm title="Header" />
 
             <Toggle title="image"/>
 

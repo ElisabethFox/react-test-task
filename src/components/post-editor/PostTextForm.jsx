@@ -1,6 +1,11 @@
 import Form from 'react-bootstrap/Form';
 
-const PostTextForm = () => {
+const PostTextForm = ({ text }) => {
+    const handleChange = (e) => {
+        e.preventDefault();
+        localStorage.setItem('Post Text', JSON.stringify(e.target.value))
+    };
+
     return (
         <Form>
             <Form.Group className="">
@@ -8,11 +13,11 @@ const PostTextForm = () => {
                         as="textarea"
                         rows={5}
                         type="text"
-                        name="title"
-                        aria-label="Title"
+                        name={text}
+                        aria-label={text}
                         className="form"
-                        placeholder="Some post text"
-                        //onChange={{}}
+                        placeholder={text}
+                        onChange={handleChange}
                     />
             </Form.Group>
         </Form>
