@@ -2,7 +2,7 @@ import { Form } from 'react-bootstrap';
 import { useState } from 'react';
 import DrugAndDrop from './DrugAndDrop';
 
-const ImageToggle = ({ title }) => {
+const ImageToggle = ({ name }) => {
     const [isActive, setActive] = useState(false);
 
     const handleClick = () => {
@@ -15,7 +15,7 @@ const ImageToggle = ({ title }) => {
           <Form className="toggle-btn">
             <Form.Check
               type="switch"
-              label={title}
+              label={name}
               onClick={handleClick}
               active={isActive.toString()}
             />
@@ -30,7 +30,7 @@ const ImageToggle = ({ title }) => {
         <Form className="toggle-btn">
           <Form.Check
             type="switch"
-            label={title}
+            label={name}
             onClick={handleClick}
             active={isActive.toString()}
           />
