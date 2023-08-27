@@ -1,6 +1,5 @@
 import { Form } from 'react-bootstrap';
 import { useState } from 'react';
-import InputForm from './InputForm';
 import DrugAndDrop from './DrugAndDrop';
 
 const ImageToggle = ({ title }) => {

@@ -11,8 +11,7 @@ const PostEditor = () => {
     const handleChange = (elementName, e) => {
         e.preventDefault();
         localStorage.setItem(elementName, JSON.stringify(e.target.value));
-        const newPostData = {...currentPostData, [elementName]: e.target.value};
-        setPostData(newPostData);
+        setPostData({...currentPostData, [elementName]: e.target.value});
     };
 
     return (
