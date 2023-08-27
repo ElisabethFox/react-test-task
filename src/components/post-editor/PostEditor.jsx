@@ -1,4 +1,4 @@
-import InputForm from './InputForm';
+import TitleForm from './TitleForm';
 import PostTextForm from './PostTextForm';
 import HeaderToggle from './HeaderToggle';
 import ImageToggle from './ImageToggle';
@@ -9,13 +9,13 @@ const PostEditor = () => {
         <div className="post-container post-editor">
             <h2 className="post-editor__title">Settings</h2>
 
-            <InputForm name="Title" />
+            <TitleForm name="Title" />
             <PostTextForm name="Post Text" />
 
             <HeaderToggle name="Header" />
-            <ImageToggle name="Image"/>
+            <ImageToggle name="Image" />
 
-            <SaveButton />
+            <SaveButton name="Save" />
         </div>
     );
 }

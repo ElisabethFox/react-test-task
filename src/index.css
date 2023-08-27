@@ -25,15 +25,11 @@ code {
   width: 50%;
 }
 
+/* Post Editor Styles */
+
 .post-editor {
   padding: 30px;
   background-color: #e4f1ff;
-}
-
-.post-preview {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
 }
 
 .form {
@@ -41,18 +37,14 @@ code {
 
   margin: 10px 0;
   padding: 5px 5px;
+}
 
+.post-text__form {
   resize: vertical;
 }
 
-.post-content__card {
-  margin: 0 30px;
-}
-
-.card-img {
-  margin: 0 auto;
-
-  width: 100%;
+.toggle-btn {
+  margin: 10px 0;
 }
 
 .file-upload__wrapper {
@@ -74,4 +66,25 @@ code {
 .file-upload {
   height: 100px;
   opacity: 0%;
+}
+
+.save__button {
+  margin: 10px 0;
+}
+
+/* Post Preview Styles */
+
+.post-preview {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.post-content__card {
+  margin: 0 30px;
+}
+
+.card-img {
+  margin: 0 auto;
+  width: 100%;
 }

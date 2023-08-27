@@ -18,7 +18,7 @@ const PostTextForm = ({ name }) => {
                         type="text"
                         name={name}
                         aria-label={name}
-                        className="form"
+                        className="form post-text__form"
                         placeholder='Some Post Text'
                         onChange={handleChange}
                     />

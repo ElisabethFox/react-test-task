@@ -3,7 +3,7 @@ import useSaving from '../../hooks/useSaving';
 import usePostData from '../../hooks/usePostData';
 import { toast } from 'react-toastify';
 
-const SaveButton = () => {
+const SaveButton = ({ name }) => {
     const { postTitle, postText, postHeader, postImg } = usePostData();
     
     const handleClick = () => {
@@ -16,7 +16,13 @@ const SaveButton = () => {
     };
 
     return (
-        <Button variant="primary" onClick={handleClick}>Save</Button>
+        <Button
+            className="save__button"
+            variant="primary" 
+            onClick={handleClick}
+        >
+        {name}
+        </Button>
     );
 }
  
