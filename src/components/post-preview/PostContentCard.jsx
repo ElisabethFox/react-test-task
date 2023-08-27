@@ -1,12 +1,12 @@
 import Card from 'react-bootstrap/Card';
 import PostPreviewHeader from './PostPreviewHeader';
 
-const PostContentCard = ( { title, text, header} ) => {
+const PostContentCard = ( { title, text, header, img} ) => {
 
     return (
         <Card className="post-content__card">
           <PostPreviewHeader header={header} />
-        <Card.Img variant="bottom" className="card-img" src={JSON.parse(localStorage.getItem('img'))} />
+        <Card.Img variant="bottom" className="card-img" src={img} />
         <Card.Body>
           <Card.Title>{title}</Card.Title>
           <Card.Text>

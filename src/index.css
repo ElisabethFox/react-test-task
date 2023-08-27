@@ -55,3 +55,24 @@ code {
 
   width: 100%;
 }
+
+.file-upload__wrapper {
+  position: relative;
+
+  height: 100px;
+  border: 1.2px dashed;
+  border-radius: 5px;
+  background-color: #d3d3d3;
+}
+
+.file-upload__text {
+  position: absolute;
+
+  top: 40px;
+  left: 40%;
+}
+
+.file-upload {
+  height: 100px;
+  opacity: 0%;
+}
