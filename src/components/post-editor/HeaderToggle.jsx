@@ -1,8 +1,7 @@
 import { Form } from 'react-bootstrap';
 import { useState } from 'react';
-import InputForm from './InputForm';
 
-const HeaderToggle = ({ title }) => {
+const HeaderToggle = ({ name, handleChange }) => {
     const [isActive, setActive] = useState(false);
 
     const handleClick = () => {
@@ -15,13 +14,25 @@ const HeaderToggle = ({ title }) => {
           <Form className="toggle-btn">
             <Form.Check
               type="switch"
-              label={title}
+              label={name}
               onClick={handleClick}
               active={isActive.toString()}
             />
           </Form>
 
-          <InputForm title={title}/>
+          <Form>
+            <Form.Group className="mb-10">
+                    <Form.Control
+                        as="input"
+                        type="text"
+                        name={name}
+                        aria-label={name}
+                        className="form"
+                        placeholder={name}
+                        onChange={(e) => handleChange('header', e)}
+                    />
+            </Form.Group>
+          </Form>
         </>
       )
     };
@@ -30,7 +41,7 @@ const HeaderToggle = ({ title }) => {
         <Form className="toggle-btn">
           <Form.Check
             type="switch"
-            label={title}
+            label={name}
             onClick={handleClick}
             active={isActive.toString()}
           />

@@ -1,28 +1,17 @@
 import Form from 'react-bootstrap/Form';
-import usePostData from '../../hooks/usePostData';
 
-const InputForm = ({ title }) => {
-    const context = usePostData();
-    const { currentPostData, setPostData } = context;
-
-    const handleChange = (e) => {
-        e.preventDefault();
-        localStorage.setItem('title', JSON.stringify(e.target.value));
-        const newPostData = {...currentPostData, 'title': e.target.value};
-        setPostData(newPostData);
-    };
-
+const InputForm = ({ name, handleChange }) => {
     return (
         <Form>
             <Form.Group className="mb-10">
                     <Form.Control
                         as="input"
                         type="text"
-                        name={title}
-                        aria-label='Title'
+                        name={name}
+                        aria-label={name}
                         className="form"
-                        placeholder='Title'
-                        onChange={handleChange}
+                        placeholder={name}
+                        onChange={(e) => handleChange('title', e)}
                     />
             </Form.Group>
         </Form>

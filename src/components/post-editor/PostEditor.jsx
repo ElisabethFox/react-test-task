@@ -5,18 +5,25 @@ import usePostData from '../../hooks/usePostData';
 import ImageToggle from './ImageToggle';
 
 const PostEditor = () => {
-    const { postData } = usePostData();
-    const { title, postText, header } = postData;
+    const context = usePostData();
+    const { currentPostData, setPostData } = context;
+
+    const handleChange = (elementName, e) => {
+        e.preventDefault();
+        localStorage.setItem(elementName, JSON.stringify(e.target.value));
+        const newPostData = {...currentPostData, [elementName]: e.target.value};
+        setPostData(newPostData);
+    };
 
     return (
         <div className="post-container post-editor">
             <h2 className="post-editor__title">Settings</h2>
 
-            <InputForm title={title} />
-            <PostTextForm text={postText} />
+            <InputForm name="Title" handleChange={handleChange} />
+            <PostTextForm name="Post Text" handleChange={handleChange} />
 
-            <HeaderToggle title="Header"/>
-            <ImageToggle title="Image"/>
+            <HeaderToggle name="Header" handleChange={handleChange} />
+            <ImageToggle name="Image"/>
             
         </div>
     );
