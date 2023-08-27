@@ -3,13 +3,13 @@ import { useState } from 'react';
 import DrugAndDrop from './DrugAndDrop';
 
 const ImageToggle = ({ name }) => {
-    const [isActive, setActive] = useState(false);
+    const [isDisabled, setDisabled] = useState(false);
 
     const handleClick = () => {
-        setActive(!isActive);
+      setDisabled(!isDisabled);
     };
 
-    if (isActive) {
+    if (isDisabled) {
       return (
         <>
           <Form className="toggle-btn">
@@ -17,7 +17,7 @@ const ImageToggle = ({ name }) => {
               type="switch"
               label={name}
               onClick={handleClick}
-              active={isActive.toString()}
+              active={isDisabled.toString()}
             />
           </Form>
 
@@ -32,7 +32,7 @@ const ImageToggle = ({ name }) => {
             type="switch"
             label={name}
             onClick={handleClick}
-            active={isActive.toString()}
+            active={isDisabled.toString()}
           />
         </Form>
     );

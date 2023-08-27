@@ -9,7 +9,6 @@ const PostTextForm = ({ name }) => {
         setPostText(e.target.value);
     };
 
-
     return (
         <Form>
             <Form.Group>

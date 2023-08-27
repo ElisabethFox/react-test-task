@@ -1,7 +1,7 @@
 import Card from 'react-bootstrap/Card';
 
 const PostPreviewHeader = ({ header }) => {
-    if (!localStorage.getItem('header')) {
+    if (!header) {
         return;
     }
 

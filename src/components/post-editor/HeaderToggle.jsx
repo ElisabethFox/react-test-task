@@ -1,14 +1,27 @@
 import { Form } from 'react-bootstrap';
 import { useState } from 'react';
+import usePostData from '../../hooks/usePostData';
 
-const HeaderToggle = ({ name, handleChange }) => {
-    const [isActive, setActive] = useState(false);
+const HeaderToggle = ({ name }) => {
+    const [isDisabled, setDisabled] = useState(false);
+    const { setPostHeader } = usePostData();
 
     const handleClick = () => {
-        setActive(!isActive);
+      setDisabled(!isDisabled);
+
+        if(!isDisabled) {
+          setPostHeader(name);
+        } else {
+          setPostHeader('');
+        }
     };
 
-    if (isActive) {
+    const handleChange = (e) => {
+        e.preventDefault();
+        setPostHeader(e.target.value);
+    };
+
+    if (isDisabled) {
       return (
         <>
           <Form className="toggle-btn">
@@ -16,7 +29,7 @@ const HeaderToggle = ({ name, handleChange }) => {
               type="switch"
               label={name}
               onClick={handleClick}
-              active={isActive.toString()}
+              active={isDisabled.toString()}
             />
           </Form>
 
@@ -29,7 +42,7 @@ const HeaderToggle = ({ name, handleChange }) => {
                         aria-label={name}
                         className="form"
                         placeholder={name}
-                        onChange={(e) => handleChange('header', e)}
+                        onChange={handleChange}
                     />
             </Form.Group>
           </Form>
@@ -43,7 +56,7 @@ const HeaderToggle = ({ name, handleChange }) => {
             type="switch"
             label={name}
             onClick={handleClick}
-            active={isActive.toString()}
+            active={isDisabled.toString()}
           />
         </Form>
     );
