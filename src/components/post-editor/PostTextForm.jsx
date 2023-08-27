@@ -1,9 +1,15 @@
 import Form from 'react-bootstrap/Form';
+import usePostData from '../../hooks/usePostData';
 
 const PostTextForm = ({ text }) => {
+    const context = usePostData();
+    const { currentPostData, setPostData } = context;
+
     const handleChange = (e) => {
         e.preventDefault();
-        localStorage.setItem('postText', JSON.stringify(e.target.value))
+        localStorage.setItem('postText', JSON.stringify(e.target.value));
+        const newPostData = {...currentPostData, 'postText': e.target.value};
+        setPostData(newPostData);
     };
 
     return (
@@ -16,7 +22,7 @@ const PostTextForm = ({ text }) => {
                         name={text}
                         aria-label={text}
                         className="form"
-                        placeholder={text}
+                        placeholder='Some Post Text'
                         onChange={handleChange}
                     />
             </Form.Group>

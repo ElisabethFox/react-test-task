@@ -1,9 +1,15 @@
 import Form from 'react-bootstrap/Form';
+import usePostData from '../../hooks/usePostData';
 
 const InputForm = ({ title }) => {
+    const context = usePostData();
+    const { currentPostData, setPostData } = context;
+
     const handleChange = (e) => {
         e.preventDefault();
-        localStorage.setItem(title, JSON.stringify(e.target.value))
+        localStorage.setItem('title', JSON.stringify(e.target.value));
+        const newPostData = {...currentPostData, 'title': e.target.value};
+        setPostData(newPostData);
     };
 
     return (
@@ -13,9 +19,9 @@ const InputForm = ({ title }) => {
                         as="input"
                         type="text"
                         name={title}
-                        aria-label={title}
+                        aria-label='Title'
                         className="form"
-                        placeholder={title}
+                        placeholder='Title'
                         onChange={handleChange}
                     />
             </Form.Group>

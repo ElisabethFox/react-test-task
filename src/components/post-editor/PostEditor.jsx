@@ -15,8 +15,8 @@ const PostEditor = () => {
             <InputForm title={title} />
             <PostTextForm text={postText} />
 
-            <HeaderToggle title={header}/>
-            <ImageToggle title="image"/>
+            <HeaderToggle title="Header"/>
+            <ImageToggle title="Image"/>
             
         </div>
     );
