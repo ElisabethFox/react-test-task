@@ -1,7 +1,7 @@
 import PostEditor from "./post-editor/PostEditor";
 import PostPreview from "./post-preview/PostPreview";
 
-const App = () => {
+const App = () => {  
     return (
         <>
             <PostEditor />

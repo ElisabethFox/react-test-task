@@ -3,6 +3,7 @@ import PostTextForm from './PostTextForm';
 import HeaderToggle from './HeaderToggle';
 import usePostData from '../../hooks/usePostData';
 import ImageToggle from './ImageToggle';
+import SaveButton from './SaveButton';
 
 const PostEditor = () => {
     const context = usePostData();
@@ -23,7 +24,8 @@ const PostEditor = () => {
 
             <HeaderToggle name="Header" handleChange={handleChange} />
             <ImageToggle name="Image"/>
-            
+
+            <SaveButton />
         </div>
     );
 }

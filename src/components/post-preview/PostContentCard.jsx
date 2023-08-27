@@ -6,7 +6,7 @@ const PostContentCard = ( { title, text, header} ) => {
     return (
         <Card className="post-content__card">
           <PostPreviewHeader header={header} />
-        <Card.Img variant="bottom" src={localStorage.getItem('img')} />
+        <Card.Img variant="bottom" className="card-img" src={JSON.parse(localStorage.getItem('img'))} />
         <Card.Body>
           <Card.Title>{title}</Card.Title>
           <Card.Text>
