@@ -1,5 +1,6 @@
 **Post Editor** is an application for creating and previewing posts
-<code>[Let's try it!](https://frontend-project-12-production-02f1.up.railway.app/login)</code> 
+
+<code>[Let's try it!](https://react-test-task-1v10423nx-lisagontsova-gmailcom.vercel.app/)</code> 
 
 ![preview-img](./img/preview.png)
 
