@@ -1,15 +1,15 @@
-import App from "./components/App";
-import PostDataContextProvider from "./context/PostDataContext";
-
+import App from './components/App';
+import PostDataContextProvider from './context/PostDataContext';
+import ToggleContextProvider from './context/ToggleContext';
 
 const init = () => {
-
-    return (
-        <PostDataContextProvider>
-            <App />
-        </PostDataContextProvider>
-    )
-
+  return (
+    <PostDataContextProvider>
+      <ToggleContextProvider>
+        <App />
+      </ToggleContextProvider>
+    </PostDataContextProvider>
+  );
 };
 
 export default init;

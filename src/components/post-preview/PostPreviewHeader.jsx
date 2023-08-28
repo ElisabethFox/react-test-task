@@ -1,13 +1,14 @@
 import Card from 'react-bootstrap/Card';
+import useToggleData from '../../hooks/useToggleData';
 
 const PostPreviewHeader = ({ header }) => {
-    if (!header) {
-        return;
-    }
+  const { isHeaderToggleActive } = useToggleData();
 
-    return (
-        <Card.Header>{header}</Card.Header>
-    );
-}
- 
+  if (!isHeaderToggleActive) {
+    return;
+  }
+
+  return <Card.Header>{header}</Card.Header>;
+};
+
 export default PostPreviewHeader;

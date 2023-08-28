@@ -1,41 +1,41 @@
 import { Form } from 'react-bootstrap';
-import { useState } from 'react';
 import DrugAndDrop from './DrugAndDrop';
+import useToggleData from '../../hooks/useToggleData';
 
 const ImageToggle = ({ name }) => {
-    const [isDisabled, setDisabled] = useState(false);
+  const { isImgToggleActive, setImgToggleActive } = useToggleData();
 
-    const handleClick = () => {
-      setDisabled(!isDisabled);
-    };
+  const handleClick = () => {
+    setImgToggleActive(!isImgToggleActive);
+  };
 
-    if (isDisabled) {
-      return (
-        <>
-          <Form className="toggle-btn">
-            <Form.Check
-              type="switch"
-              label={name}
-              onClick={handleClick}
-              active={isDisabled.toString()}
-            />
-          </Form>
-
-          <DrugAndDrop />
-        </>
-      )
-    };
-
+  if (isImgToggleActive) {
     return (
+      <>
         <Form className="toggle-btn">
           <Form.Check
             type="switch"
             label={name}
             onClick={handleClick}
-            active={isDisabled.toString()}
+            active={isImgToggleActive.toString()}
           />
         </Form>
+
+        <DrugAndDrop />
+      </>
     );
+  }
+
+  return (
+    <Form className="toggle-btn">
+      <Form.Check
+        type="switch"
+        label={name}
+        onClick={handleClick}
+        active={isImgToggleActive.toString()}
+      />
+    </Form>
+  );
 };
- 
+
 export default ImageToggle;
