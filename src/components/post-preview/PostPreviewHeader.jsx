@@ -4,11 +4,9 @@ import useToggleData from '../../hooks/useToggleData';
 const PostPreviewHeader = ({ header }) => {
   const { isHeaderToggleActive } = useToggleData();
 
-  if (!isHeaderToggleActive) {
-    return;
+  if (isHeaderToggleActive || localStorage.getItem('header')) {
+    return <Card.Header>{header}</Card.Header>;
   }
-
-  return <Card.Header>{header}</Card.Header>;
 };
 
 export default PostPreviewHeader;

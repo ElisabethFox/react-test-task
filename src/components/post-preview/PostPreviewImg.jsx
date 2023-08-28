@@ -4,11 +4,9 @@ import useToggleData from '../../hooks/useToggleData';
 const PostPreviewImg = ({ img }) => {
   const { isImgToggleActive } = useToggleData();
 
-  if (!isImgToggleActive) {
-    return;
+  if (isImgToggleActive || localStorage.getItem('img')) {
+    return <Card.Img variant="bottom" className="card-img" src={img} />;
   }
-
-  return <Card.Img variant="bottom" className="card-img" src={img} />;
 };
 
 export default PostPreviewImg;
